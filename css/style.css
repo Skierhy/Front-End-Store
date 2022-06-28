@@ -85,7 +85,7 @@ h3 {
 
 /* usemos BEM
     BLOCK ELEMENT MODIFIER
-        es una metodología para crear código reutilizable y ordenados para tus proyectos css
+        es una metodología para crear código reutilizarlo y ordenados para tus proyectos css
         para usarlo  tenemos que seguir una convenciones de BEM como debes que nombras las clases o elementos  
         ayuda a que no tengamos colisiones de nombres 
 
@@ -147,7 +147,7 @@ h3 {
 	font-family: var(--fuentePrincipal);
 	/* color de la letra */
 	color: var(--blanco);
-	/* tamano  */
+	/* tamaño  */
 	font-size: 3rem;
 	margin-right: 2rem;
 }
@@ -166,7 +166,7 @@ h3 {
 .footer {
 	/* color de fondo */
 	background-color: var(--primarioOscuro);
-	/* pading arriba y abajo 1rem  */
+	/* padding arriba y abajo 1rem  */
 	padding: 1rem 0;
 	/* margen de 2rem arriba */
 	margin-top: 2rem;
@@ -177,14 +177,14 @@ h3 {
 	font-family: var(--fuentePrincipal);
 	/* texto centrado */
 	text-align: center;
-	/* tamano de letra */
+	/* tamaño de letra */
 	font-size: 2.2rem;
 }
 
 /* GRID */
 
 .grid {
-	/* usremos grid para posicionar los elementos */
+	/* usaremos grid para posicionar los elementos */
 	display: grid;
 	/* para pantalla pequeñas usare 2 elementos y unidad sera fracciones */
 	grid-template-columns: repeat(2, 1fr);
@@ -220,7 +220,7 @@ h3 {
 	color: var(--secundario);
 }
 
-/* cosas en comun entre estas clases para no escribir tanto código */
+/* cosas en común entre estas clases para no escribir tanto código */
 .producto__nombre,
 .producto__precio {
 	/* tipo de texto */
@@ -363,7 +363,7 @@ h3 {
 	font-size: 2rem;
 	/* tipo de letra */
 	font-family: Arial, Helvetica, sans-serif;
-	/* uso de panding */
+	/* uso de padding */
 	padding: 1rem;
 	/* quitar la flecha de la lista despegable */
 	appearance: none;
@@ -382,7 +382,7 @@ h3 {
 	font-size: 2rem;
 	/* cambiamos el tipo de fuente */
 	font-family: var(--fuentePrincipal);
-	/* hacemos un pandding para hacer mas grande el botón */
+	/* hacemos un padding para hacer mas grande el botón */
 	padding: 2rem;
 
 	/* para hacer una transición entre el color se hace asi 
