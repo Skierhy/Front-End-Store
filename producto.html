@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FrontEnd Store</title>
+		<!-- aqui agregamos la normalizacion para intentar que todos lo navegadores se vean iguales -->
+		<link rel="preload" href="CSS/Normalize.css" as="style" />
+		<link rel="stylesheet" href="/css/Normalize.css" />
+		<!-- codigo para importar el tipo de letra -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- css de mi estilo -->
+		<link rel="preload" href="CSS/Style.css" as="style" />
+		<link rel="stylesheet" href="/css/Style.css" />
+	</head>
+	<body>
+		<!-- este es el header -->
+		<header class="header">
+			<!-- los link se usa "a"  para escoger la ubicacion es usa href=("")-->
+			<!-- no se utliza BEM a enlace por que no es visible -->
+			<a href="Index.html">
+				<!-- para poner una imagen es con img y para buscar la imagen es src=("") texto alternativo por si acaso no tenemos imagen mostrara el nombre alternativo-->
+				<img class="header__logo" src="img/logo.png" alt="Logotipo" />
+			</a>
+		</header>
+
+		<nav class="nav">
+			<!-- entre los enlaces podemos escribir texto y usamos href=("#") para que se muestra el enlace mientras no tenga nada-->
+			<a class="nav__enlace nav__enlace--activo" href="Index.html">
+				Tienda
+			</a>
+			<a class="nav__enlace" href="Nosotros.html"> Nosotros </a>
+		</nav>
+
+		<main class="contenedor">
+			<h1>React JS</h1>
+
+			<div class="camisa">
+				<img
+					class="camisa__imagen"
+					src="/img/3.jpg"
+					alt="imagen del producto"
+				/>
+
+				<div class="camisa_contenido">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Corrupti eius veniam officiis et voluptatum obcaecati, ab
+						dolor recusandae praesentium unde explicabo voluptate
+						asperiores cumque ipsum, ad eveniet, velit blanditiis dolorum?
+					</p>
+
+					<form class="formulario">
+						<select class="formulario__campo">
+							<!-- en esta parte el disabled es para que no se pueda selecionar
+                        y el selected que se muestra como default -->
+							<option class="formulario__opciones" disabled selected>
+								---Selecionar talla---
+							</option>
+							<option class="formulario__opciones">Chica</option>
+							<option class="formulario__opciones">Mediana</option>
+							<option class="formulario__opciones">Grande</option>
+						</select>
+						<!-- este input va ser de tipo numero que solamente aceptara numero y el  placeholder sirve para poner titulo en el cuadro cuando no tiene datos
+                    para que no puedas o se puede decir limitar cual es el minimo es con "min"
+                    step se usa para  cuando estara saltado me refiero 10 20 30 va en 10 en 10-->
+						<input
+							class="formulario__campo"
+							type="number"
+							placeholder="Cantida"
+							min="1"
+						/>
+						<input
+							class="formulario__submit"
+							type="submit"
+							value="Agregar al carito"
+						/>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<p class="footer__texto">
+				Front End Store - Todos los derechos reservados 2021.
+			</p>
+		</footer>
+	</body>
+</html>

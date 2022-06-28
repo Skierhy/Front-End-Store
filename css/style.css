@@ -1,0 +1,410 @@
+/* es donde vamos a registrar unos custom properties
+son como variables que podemos reutilizar y si queremos cambiar algo pues no necesitamos cambiar todo */
+:root{
+    /* mis variables de colores */
+    --primario: #9c27b0;
+    --primarioOscuro:  #89119d;
+    --secundario: #ffce00;
+    --secundarioOscuro: rgb(211, 145,21);
+    --blanco: #ffffff;
+    --negro: #000000;
+    /* fuente */
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+/* aplicar un modelo de diseno de caja natural a todos los elementos, pero permitiendo que los componentes cambien */
+/* lo que hace es hacer mas sencillo el uso de box model */
+html {
+    box-sizing: border-box;
+    /* esto nos ayuda para que un rem sea 10px */
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+/* crear unas globales */
+body {
+    /* color de fondo */
+    background-color: var(--primario);
+    /* tamano de fuente */
+    font-size: 1.6rem;
+    /* un interlineado */
+    /* La propiedad  CSS line-height establece la altura de una casilla remarcada por líneas. */
+    line-height: 1.5;
+}
+
+p {
+    /* tamano de letra */
+    font-size: 1.8rem;
+    /* tipo de letra */
+    font-family: Arial, Helvetica, sans-serif;
+    /* color */
+    color: var(--blanco);
+}
+
+a {
+    /* este para que los enlaces no tenga la linea de abajo */
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor{
+    /* La propiedad CSS establece el ancho máximo de un elemento. */
+    max-width: 120rem;
+    /* para centrar el contendio */
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    /* centrar texto */
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+
+/* usemos BEM
+    BLOCK ELEMENT MODIFIER
+        es una metodologia para crear codigo reutilizable y ordenados para tus proyectos css
+        para usarlo  tenemos que seguir una convenciones de BEM como debes que nombras las clases o elementos  
+        ayuda a que no tengamos colisiones de nombres 
+
+    reglas de BEM
+        BLOQUES
+            Son contenedores, si una  secccion por si sola es significativa y no requiere de  otras secciones para su aparencia  (css) debera ir  en un  bloque 
+                ejemplo
+                <div class="cliente"></div>
+                        .cliente {
+                        }
+        ELEMENTOS
+            parte de bloque, depende  del bloque y no es  por si solo significativo; tiene las caracteristica de que utilizan el nombre del bloque y despues doble guion bajo__
+                        ejemplo;
+                            <p class="cliente__nombre"></div>
+                            .cliente__nombre {
+                        }
+        MODIFICADORES
+            Un bloque  o elemento tendra una variante? se utiliza  un  modificador que es  una "bandera" que avisa ese elemento tendra un diseno diferente
+                ejemplo
+                    <p class="cliente__nombre--ceo"></div>
+                            .cliente__nombre--ceo {
+                        }                         
+*/
+
+
+
+/* Header */
+.header {
+    /* vamos a usar un display flex */
+    /* fue disenado como un modelo unidimensional de layout, y como un método que pueda ayudar a distribuir el espacio entre los ítems de una interfaz y mejorar las capacidades de alineación. */
+    display: flex;
+    /* para centrar con flex usa este  */
+    justify-content: center;
+}
+
+.header__logo{
+    /* primer valor arriba y bajo
+    segundo valor izquierda a derecha
+    */
+    margin: 3rem 0;
+}
+
+/* nav */
+
+.nav {
+    /* color de fondo */
+    background-color: var(--primarioOscuro);
+    /* padding de arriba y abajo de 1rem y de izquieda a derecha 0 */
+    padding: 1rem 0;
+    /* usamos display flex para posicionar en row */
+    display: flex;
+    /* centramos el contendio */
+    justify-content: center;
+    /* separamos los elementos */
+    /* o se puede usar margin-right de 2 rem */
+    /* gap: 2rem; Separacion forma nueva */
+}
+
+.nav__enlace {
+    /* tipo de fuente */
+    font-family: var(--fuentePrincipal);
+    /* color de la letra */
+    color: var(--blanco);
+    /* tamano  */
+    font-size: 3rem;
+    margin-right: 2rem;
+}
+/* este es un pseudo selector que indica eligira el ultimo elemento*/
+.nav__enlace:last-of-type {
+    margin-right: 0;
+}
+/* lo que hace es cuando pasas el cursor arriba hara una accion */
+.nav__enlace--activo,
+.nav__enlace:hover {
+    color: var(--secundario);
+}
+
+
+/* footer */
+
+.footer {
+    /* color de fondo */
+    background-color: var(--primarioOscuro);
+    /* pading arriba y abajo 1rem  */
+    padding: 1rem 0;
+    /* margen de 2rem arriba */
+    margin-top: 2rem;
+}
+
+.footer__texto {
+    /* cambio de fuente de texto */
+    font-family: var(--fuentePrincipal);
+    /* texto centrado */
+    text-align: center;
+    /* tamano de letra */
+    font-size: 2.2rem;
+}
+
+/* GRID */
+
+.grid {
+    /* usremos grid para posicionar los elementos */
+    display: grid;
+    /* para pantalla pequenas usare 2 elementos y unidad sera fraciones */
+    grid-template-columns: repeat(2,1fr);
+    /* para la separacion entre los productos
+    o tambien se puede usar gap: 2rem: */
+    row-gap: 2rem;
+    column-gap: 2rem;
+
+}
+
+@media (min-width: 768px) {
+    .grid {
+        /* para dispositivos grandes usaremos con 3 */
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+/* productos */
+
+.producto {
+    /* color de fondo de producto */
+    background-color: var(--primarioOscuro);
+    /* tener mas espacio */
+    padding: 1rem;
+
+}
+
+.producto__nombre {
+    /* tamano de letra */
+    font-size: 4rem;
+
+}
+
+.producto__precio {
+    /* tamano de letra */
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+/* cosas en comun entre estas clases para no escribir tanto codigo */
+.producto__nombre,
+.producto__precio {
+    /* tipo de texto */
+    font-family: var(--fuentePrincipal);
+    /* margen arriba y abajo 1rem y los lados 0 */
+    margin: 1rem 0;
+    /* centramos el texto */
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+/* graficos */
+.grafico {
+    /* este para cual sera el minimo de altura */
+    min-height: 30rem;
+    /* para que no se repita las imagenes */
+    background-repeat: no-repeat;
+    /* para que se estire y llene todo el espacio disponible */
+    background-size: cover;
+    /* ponemos las columnas aqui por que aplica la misma regla */
+    grid-column: 1 / 3;
+}
+
+.grafico--camisas {
+    /* posicionamiento  */
+    grid-row: 2 / 3;
+    
+    /* cargar imagen */
+    background-image: url(../img/grafico1.jpg);
+
+}
+
+.grafico--node{
+    /* cargar imagen */
+    background-image: url(../img/grafico2.jpg);
+    /* posicionamiento */
+    grid-row: 8 / 9;
+}
+/* para pantallas grandes */
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    
+    }
+}
+
+
+/* nosotros.html */
+/* nosotros */
+.nosotros {
+    /* usamos grid para posicionar los elementos */
+    display: grid;
+    /* haremos dos filas */
+    grid-template-rows: repeat(2, auto);
+}
+@media (min-width: 768px) {
+    .nosotros {
+        /* en esta parte en vez de usar filas usaremos columnas */
+        grid-template-columns: repeat(2, 1fr);
+        /* margen que tiene  */
+        column-gap: 2rem;
+    }
+}
+
+.nosotros__imagen {
+    /* la posicion en filas */
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        /* posicion en columna cuando la pantalla es grande */
+        grid-column: 2 / 3;
+    }
+}
+
+/* bloques */
+
+.bloques {
+    /* usaremos para posicionar los elementos en pantallas pequenas */
+    display: grid;
+    /* sera dos columnas */
+    grid-template-columns: repeat(2, 1fr);
+    /* el espacio entre filas */
+    row-gap: 2rem;
+    /* espacio entre columnas */
+    column-gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .bloques {
+        /* cuando es pantalla grande hara que sea 4 columnas */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque {
+    /* centramos el texto */
+    text-align: center;
+}
+
+.bloque__titulo {
+    /* no tendra margen */
+    margin: 0;
+}
+
+/* pagina del producto */
+@media (min-width: 768px) {
+    .camisa {
+        /* para pantallas grande usemos grid para posicionar  */
+        display: grid;
+        /* sera dos columnas en total */
+        grid-template-columns: repeat(2, 1fr);
+        /* margen entre  */
+        column-gap: 2rem;
+    }
+}
+
+.formulario { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.formulario__campo {
+    /* cambiamos el color de borde */
+    border-color: var(--primarioOscuro);
+    /* el grosor de borde */
+    border-width: 1rem;
+    /* el estilo de borde */
+    border-style: solid;
+
+    /* otra forma si mucho codigo es
+    donde el primer parametro es grosor despues el estilo y por ultimo el color 
+    border: 1rem solid  var(--primarioOscuro);*/
+    /* para que el fondo sea transparente y tomara se puede decir el color de body */
+    background-color: transparent;
+    /* color de letra */
+    color: var(--blanco);
+    /* tamano de letra */
+    font-size: 2rem;
+    /* tipo de letra */
+    font-family: Arial, Helvetica, sans-serif;
+    /* uso de panding */
+    padding: 1rem;
+    /* quitar la flecha de la lista despegable */
+    appearance: none;
+}
+
+.formulario__opciones{
+    color: var(--negro);
+}
+
+.formulario__submit {
+    /* en esta parte pondremos el color */
+    background-color: var(--secundario);
+    /* quetamos el borde */
+    border: none;
+    /* aumentamos el tamano de letra */
+    font-size: 2rem;
+    /* cambiamos el tipo de fuente */
+    font-family: var(--fuentePrincipal);
+    /* hacemos un pandding para hacer mas grande el boton */
+    padding: 2rem;
+
+    /* para hacer una transicion entre el color se hace asi 
+    primero indicamos con transition despues que propieda sera transicion
+    en este caso background-color
+    despues el tiempo de la animacion
+    
+    NOTA: se pueda hacer con cualquier propieda pero debemos que tener un fin y un inicio*/
+    transition: background-color .3s ease;
+
+    grid-column: 1 / 3;
+}
+/* cuando hacemos que el boton tenga estilo se quita la propiedad de poner la manita  y con este quedaria  y cuando pasas por el curso cambiara el color tambien*/
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
