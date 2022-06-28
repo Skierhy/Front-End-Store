@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>FrontEnd Store</title>
-		<!-- aqui agregamos la normalizacion para intentar que todos lo navegadores se vean iguales -->
+		<!-- aquí agregamos la normalización para intentar que todos lo navegadores se vean iguales -->
 		<link rel="preload" href="CSS/Normalize.css" as="style" />
 		<link rel="stylesheet" href="/css/Normalize.css" />
-		<!-- codigo para importar el tipo de letra -->
+		<!-- código para importar el tipo de letra -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -22,8 +22,8 @@
 	<body>
 		<!-- este es el header -->
 		<header class="header">
-			<!-- los link se usa "a"  para escoger la ubicacion es usa href=("")-->
-			<!-- no se utliza BEM a enlace por que no es visible -->
+			<!-- los link se usa "a"  para escoger la ubicación es usa href=("")-->
+			<!-- no se utiliza BEM a enlace por que no es visible -->
 			<a href="Index.html">
 				<!-- para poner una imagen es con img y para buscar la imagen es src=("") texto alternativo por si acaso no tenemos imagen mostrara el nombre alternativo-->
 				<img class="header__logo" src="img/logo.png" alt="Logotipo" />
@@ -58,28 +58,28 @@
 
 					<form class="formulario">
 						<select class="formulario__campo">
-							<!-- en esta parte el disabled es para que no se pueda selecionar
+							<!-- en esta parte el disabled es para que no se pueda seleccionar
                         y el selected que se muestra como default -->
 							<option class="formulario__opciones" disabled selected>
-								---Selecionar talla---
+								---Seleccionar talla---
 							</option>
 							<option class="formulario__opciones">Chica</option>
 							<option class="formulario__opciones">Mediana</option>
 							<option class="formulario__opciones">Grande</option>
 						</select>
 						<!-- este input va ser de tipo numero que solamente aceptara numero y el  placeholder sirve para poner titulo en el cuadro cuando no tiene datos
-                    para que no puedas o se puede decir limitar cual es el minimo es con "min"
-                    step se usa para  cuando estara saltado me refiero 10 20 30 va en 10 en 10-->
+                    para que no puedas o se puede decir limitar cual es el mínimo es con "min"
+                    step se usa para  cuando estará saltado me refiero 10 20 30 va en 10 en 10-->
 						<input
 							class="formulario__campo"
 							type="number"
-							placeholder="Cantida"
+							placeholder="Cantidad"
 							min="1"
 						/>
 						<input
 							class="formulario__submit"
 							type="submit"
-							value="Agregar al carito"
+							value="Agregar al carrito"
 						/>
 					</form>
 				</div>
