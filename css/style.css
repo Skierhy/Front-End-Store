@@ -9,7 +9,7 @@ son como variables que podemos reutilizar y si queremos cambiar algo pues no nec
 	--blanco: #ffffff;
 	--negro: #000000;
 	/* fuente */
-	--fuentePrincipal: "Staatliches", cursive;
+	--fuentePrincipal: 'Staatliches', cursive;
 }
 
 /* aplicar un modelo de diseño de caja natural a todos los elementos, pero permitiendo que los componentes cambien */
@@ -249,12 +249,12 @@ h3 {
 	grid-row: 2 / 3;
 
 	/* cargar imagen */
-	background-image: url(../img/grafico1.jpg);
+	background-image: url('./../img/grafico1.jpg');
 }
 
 .grafico--node {
 	/* cargar imagen */
-	background-image: url(../img/grafico2.jpg);
+	background-image: url('./../img/grafico2.jpg');
 	/* posicionamiento */
 	grid-row: 8 / 9;
 }

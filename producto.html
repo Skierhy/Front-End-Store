@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>FrontEnd Store</title>
 		<!-- aquí agregamos la normalización para intentar que todos lo navegadores se vean iguales -->
-		<link rel="preload" href="CSS/Normalize.css" as="style" />
-		<link rel="stylesheet" href="/css/Normalize.css" />
+		<link rel="preload" href="./css/normalize.css" as="style" />
+		<link rel="stylesheet" href="./css/normalize.css" />
 		<!-- código para importar el tipo de letra -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,8 +16,8 @@
 			rel="stylesheet"
 		/>
 		<!-- css de mi estilo -->
-		<link rel="preload" href="CSS/Style.css" as="style" />
-		<link rel="stylesheet" href="/css/Style.css" />
+		<link rel="preload" href="./css/style.css" as="style" />
+		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
 		<!-- este es el header -->
@@ -26,7 +26,7 @@
 			<!-- no se utiliza BEM a enlace por que no es visible -->
 			<a href="Index.html">
 				<!-- para poner una imagen es con img y para buscar la imagen es src=("") texto alternativo por si acaso no tenemos imagen mostrara el nombre alternativo-->
-				<img class="header__logo" src="img/logo.png" alt="Logotipo" />
+				<img class="header__logo" src="./img/logo.png" alt="Logotipo" />
 			</a>
 		</header>
 
@@ -44,27 +44,34 @@
 			<div class="camisa">
 				<img
 					class="camisa__imagen"
-					src="/img/3.jpg"
+					src="./img/3.jpg"
 					alt="imagen del producto"
 				/>
 
 				<div class="camisa_contenido">
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Corrupti eius veniam officiis et voluptatum obcaecati, ab
-						dolor recusandae praesentium unde explicabo voluptate
-						asperiores cumque ipsum, ad eveniet, velit blanditiis dolorum?
+						Corrupti eius veniam officiis et voluptatum obcaecati,
+						ab dolor recusandae praesentium unde explicabo voluptate
+						asperiores cumque ipsum, ad eveniet, velit blanditiis
+						dolorum?
 					</p>
 
 					<form class="formulario">
 						<select class="formulario__campo">
 							<!-- en esta parte el disabled es para que no se pueda seleccionar
                         y el selected que se muestra como default -->
-							<option class="formulario__opciones" disabled selected>
+							<option
+								class="formulario__opciones"
+								disabled
+								selected
+							>
 								---Seleccionar talla---
 							</option>
 							<option class="formulario__opciones">Chica</option>
-							<option class="formulario__opciones">Mediana</option>
+							<option class="formulario__opciones">
+								Mediana
+							</option>
 							<option class="formulario__opciones">Grande</option>
 						</select>
 						<!-- este input va ser de tipo numero que solamente aceptara numero y el  placeholder sirve para poner titulo en el cuadro cuando no tiene datos
